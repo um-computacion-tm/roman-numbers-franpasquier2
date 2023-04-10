@@ -1,185 +1,162 @@
-
-"""""
 import unittest
+from Decimal_a_romano import decimal_a_romano
+from Romano_a_Decimal import roman_to_decimal
+class TestRomanToDecimal(unittest.TestCase):
 
+    def test_I(self):
 
-def decimal_to_roman(decimal):
+        resultado = roman_to_decimal('I')
 
-    total = ''
+        self.assertEqual(resultado, 1)
 
-    if decimal >= 100:
+    def test_II(self):
 
-        centena = decimal // 100
+        resultado = roman_to_decimal('II')
 
-        total = 'C' * centena
+        self.assertEqual(resultado, 2)
 
-        decimal = decimal % 100 
+    def test_III(self):
 
-    if decimal <= 3:
+        resultado = roman_to_decimal('III')
 
-        total += 'I' * decimal
+        self.assertEqual(resultado, 3)
 
-    elif decimal == 5:
+    def test_V(self):
 
-        total += 'V'
+        resultado = roman_to_decimal('V')
 
-    elif decimal == 10:
+        self.assertEqual(resultado, 5)
 
-        total += "X"
+    def test_X(self):
 
-    return total
+        resultado = roman_to_decimal('X')
 
+        self.assertEqual(resultado, 10)
 
-class TestDecimalToRoman(unittest.TestCase):
+    def test_VI(self):
 
-    def test_uno(self):
+        resultado = roman_to_decimal('VI')
 
-        # pre condicion
+        self.assertEqual(resultado, 6)
 
-        ### NO HAY ###
+    def test_VII(self):
 
-        # proceso
+        resultado = roman_to_decimal('VII')
 
-        resultado = decimal_to_roman(1)
+        self.assertEqual(resultado, 7)
 
-        # verificacion
+    def test_IV(self):
 
-        self.assertEqual(resultado, 'I')
+        resultado = roman_to_decimal('IV')
 
+        self.assertEqual(resultado, 4)
 
-    def test_diez(self):
+    def test_IX(self):
 
-        resultado = decimal_to_roman(10)
+        resultado = roman_to_decimal('IX')
 
-        self.assertEqual(resultado, 'X')
-
-    def test_cinco(self):
-
-        resultado = decimal_to_roman(5)
-
-        self.assertEqual(resultado, 'V')
-
-
-
-    def test_dos(self):
-
-        resultado = decimal_to_roman(2)
-
-        self.assertEqual(resultado, 'II')
-
-
-    def test_tres(self):
-
-        resultado = decimal_to_roman(3)
-
-        self.assertEqual(resultado, 'III')
-
-
-    def test_cien(self):
-
-        resultado = decimal_to_roman(100)
-
-        self.assertEqual(resultado, 'C')
-
-
-    def test_ciento_uno(self):
-
-        resultado = decimal_to_roman(101)
-
-        self.assertEqual(resultado, 'CI')
-
-
-    def test_ciento_tres(self):
-
-        resultado = decimal_to_roman(103)
-
-        self.assertEqual(resultado, 'CIII')
-
-
-    def test_ciento_cinco(self):
-
-        resultado = decimal_to_roman(105)
-
-        self.assertEqual(resultado, 'CV')
-
-
-    def test_ciento_diez(self):
-
-        resultado = decimal_to_roman(110)
-
-        self.assertEqual(resultado, 'CX')
-
-    def test_docientos_tres(self):
-
-        resultado = decimal_to_roman(203)
-
-        self.assertEqual(resultado, 'CCIII')
-
-
-
-if __name__ == '__main__':
-
-    unittest.main()
-
-"""
-
-#ROMANOS 
-
-import unittest
-
-def decimal_a_romano(decimal):
-
-    if decimal <= 3:
-    
-        return "I" * decimal
-
-    elif decimal == 4:
- 
-        return "IV"
-    
-    elif decimal == 5:
-
-        return "V"
-    else:
-        return "X"
-
-
+        self.assertEqual(resultado, 9)
 
 class TestDecimalRoman(unittest.TestCase):
     
-    def Test_1(self):
+    def test_1(self):
 
         resultado = decimal_a_romano(1)
 
         self.assertEqual(resultado, "I")
 
-    def Test_2(self):
+    def test_2(self):
 
         resultado = decimal_a_romano(2)
 
         self.assertEqual(resultado, "II")
 
-    def Test_3(self):
+    def test_3(self):
 
         resultado = decimal_a_romano(3)
 
         self.assertEqual(resultado, "III")
 
-    def Test_4(self):
+    def test_4(self):
 
         resultado = decimal_a_romano(4)
 
         self.assertEqual(resultado, "IV")
     
-    def Test_5(self):
+    def test_5(self):
 
         resultado = decimal_a_romano(5)
 
         self.assertEqual(resultado, "V")
     
-    def Test_10(self):
+    def test_10(self):
 
         resultado = decimal_a_romano(10)
 
         self.assertEqual(resultado, "X")
+
+    def test_11(self):
+
+        resultado = decimal_a_romano(11)
+
+        self.assertEqual(resultado, "XI")
+
+    def test_12(self):
+
+        resultado = decimal_a_romano(12)
+
+        self.assertEqual(resultado, "XII")
+
+    def test_13(self):
+
+        resultado = decimal_a_romano(13)
+
+        self.assertEqual(resultado, "XIII")
+    
+    def test_14(self):
+
+        resultado = decimal_a_romano(14)
+
+        self.assertEqual(resultado, "XIV")
+
+    def test_15(self):
+
+        resultado = decimal_a_romano(15)
+
+        self.assertEqual(resultado, "XV")
+
+    def test_16(self):
+
+        resultado = decimal_a_romano(16)
+
+        self.assertEqual(resultado, "XVI")
+
+    def test_17(self):
+
+        resultado = decimal_a_romano(17)
+
+        self.assertEqual(resultado, "XVII")
+
+    def test_18(self):
+
+        resultado = decimal_a_romano(18)
+
+        self.assertEqual(resultado, "XVIII")
+    
+    def test_19(self):
+
+        resultado = decimal_a_romano(19)
+
+        self.assertEqual(resultado, "IX")
+    
+    def test_20(self):
+
+        resultado = decimal_a_romano(20)
+
+        self.assertEqual(resultado, "XX")
+
+if __name__ == '__main__':
+
+    unittest.main()
+
     
